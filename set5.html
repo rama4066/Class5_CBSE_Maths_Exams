@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 5 Mathematics Challenge — Set 5 | Class 5 CBSE Maths</title>
+<style>
+:root{--ink:#172554;--muted:#64748b;--blue:#4f46e5;--purple:#9333ea;--green:#16a34a;--pink:#ec4899;--line:#e2e8f0}
+*{box-sizing:border-box}
+body{margin:0;padding:22px;font-family:"Segoe UI",Tahoma,sans-serif;color:var(--ink);background:linear-gradient(135deg,#e0f2fe 0%,#f5f3ff 48%,#fce7f3 100%);min-height:100vh}
+.container{max-width:1050px;margin:auto;background:#fff;border-radius:22px;padding:28px;box-shadow:0 18px 55px #312e811c}
+.top-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#4f46e5;font-weight:700;font-size:14px;background:#eef2ff;padding:8px 14px;border-radius:10px;border:1px solid #c7d2fe;transition:.15s}
+.back-btn:hover{background:#e0e7ff;transform:translateY(-1px)}
+.hero{padding:24px;border-radius:18px;color:#fff;background:linear-gradient(115deg,#4338ca,#7c3aed 58%,#db2777);margin-bottom:22px}
+.hero h1{margin:0 0 8px;font-size:clamp(23px,4vw,32px)}
+.hero p{margin:5px 0;color:#f5f3ff}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.pill{background:#ffffff24;border:1px solid #ffffff55;padding:7px 12px;border-radius:30px;font-size:13px;font-weight:700}
+.hidden{display:none!important}
+.start-card{background:linear-gradient(135deg,#f8fafc,#eef2ff);border:1px solid #dbeafe;border-radius:16px;padding:22px}
+input[type=text]{width:min(100%,360px);padding:13px 14px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px;margin:8px 8px 8px 0}
+button{font:inherit}
+.nav{border:0;border-radius:10px;padding:11px 17px;font-weight:700;cursor:pointer;transition:.18s}
+.nav:hover,.p-btn:hover{transform:translateY(-1px);filter:brightness(.97)}
+.primary{background:linear-gradient(110deg,#4f46e5,#7c3aed);color:white}
+.secondary{background:#e2e8f0;color:#334155}
+.success{background:linear-gradient(110deg,#059669,#22c55e);color:white}
+.header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:13px 16px;background:#f8fafc;border:1px solid var(--line);border-radius:13px;margin-bottom:20px}
+.timer{font-size:21px;font-weight:800;color:#be123c;background:#fff1f2;border:1px solid #fecdd3;padding:8px 15px;border-radius:10px;font-variant-numeric:tabular-nums}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:22px}
+.question-box{min-width:0}
+.q-card{padding:20px;border:1px solid #e0e7ff;border-radius:17px;background:linear-gradient(145deg,#fff,#f8faff);min-height:330px}
+.q-number{display:inline-block;background:#ede9fe;color:#6d28d9;border-radius:30px;padding:6px 12px;font-size:13px;font-weight:800;margin-bottom:10px}
+#q-title{font-size:19px;line-height:1.9;margin:2px 0 15px;color:#1e293b}
+.visual-box{padding:14px;margin:12px 0 17px;border-radius:13px;background:linear-gradient(120deg,#eff6ff,#fdf2f8);border:1px dashed #c4b5fd;text-align:center;color:#4338ca;font-weight:700;min-height:95px}
+.visual-box .big{font-size:clamp(19px,3vw,26px);letter-spacing:0}
+.visual-box .small{font-size:13px;color:#64748b;font-weight:600;margin-top:5px}
+.option{display:flex;align-items:flex-start;gap:11px;margin:10px 0;padding:13px 14px;border:1px solid #dbe3f0;border-radius:11px;cursor:pointer;background:#fff;transition:.15s;line-height:1.4}
+.option:hover{border-color:#818cf8;background:#f5f3ff}
+.option:has(input:checked){border:2px solid #6366f1;background:#eef2ff;padding:12px 13px}
+.option input{margin-top:3px;accent-color:#4f46e5;transform:scale(1.15)}
+.controls{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:18px}
+.palette{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fbfdff;align-self:start}
+.palette-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:13px}
+.p-btn{padding:10px 4px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;cursor:pointer;font-weight:800;color:#475569}
+.p-btn.answered{background:#16a34a;color:white;border-color:#16a34a}
+.p-btn.active{outline:3px solid #c7d2fe;border-color:#4f46e5}
+.legend{font-size:12px;color:#64748b;line-height:1.8;margin-top:14px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+#save-status{padding:13px;border-radius:10px;margin:15px 0;font-weight:700}
+.saving{background:#fef3c7;color:#92400e}.saved{background:#dcfce7;color:#166534}
+.review-item{padding:13px 4px;border-bottom:1px solid #e5e7eb;line-height:1.5}
+.result-score{font-size:25px;font-weight:900;color:#4f46e5}
+#progress-wrap{height:8px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin:-7px 0 18px}
+#progress-fill{height:100%;width:4%;background:linear-gradient(90deg,#4f46e5,#ec4899);transition:width .25s}
+.frac{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;text-align:center;line-height:1.05;margin:0 2px;min-width:1.05em;font-size:.92em}
+.frac .num{padding:0 3px 3px;border-bottom:2px solid currentColor}
+.frac .den{padding:3px 3px 0}
+.mixed{display:inline-flex;align-items:center;gap:2px;white-space:nowrap}
+.visual-model{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:12px auto 3px}
+.model-card{background:#ffffffc9;border:1px solid #dbeafe;border-radius:12px;padding:9px 12px;min-width:110px}
+.model-label{font-size:11px;color:#64748b;font-weight:700;margin-bottom:7px}
+.bar-model{display:flex;gap:2px;height:18px;margin:0 auto;width:120px}
+.bar-model span{flex:1;border:1px solid #a5b4fc;border-radius:3px;background:#eef2ff}
+.bar-model span.fill{background:linear-gradient(135deg,#818cf8,#c084fc);border-color:#818cf8}
+.circle-model{width:54px;height:54px;border-radius:50%;border:3px solid #818cf8;background:conic-gradient(#a78bfa 0 40%,#f1f5f9 40% 100%);margin:auto}
+.option .frac,.review-item .frac{font-size:1em}
+@media(max-width:520px){.visual-model{gap:8px}.model-card{min-width:95px;padding:8px}}
+@media(max-width:760px){body{padding:10px}.container{padding:15px;border-radius:16px}.main{grid-template-columns:1fr}.palette{order:2}.palette-grid{grid-template-columns:repeat(5,1fr)}.q-card{padding:15px}.controls .nav{flex:1}.header{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top-nav">
+    <a href="index.html" class="back-btn">← Back to All Exam Sets</a>
+    <span style="font-size:13px;font-weight:700;color:#64748b">SET 5</span>
+  </div>
+  <div class="hero">
+    <h1>🌈 Class 5 Mathematics Challenge — Set 5</h1>
+    <p>Area, Perimeter, Volume, Measurement & Smart Charts</p>
+    <div class="pills"><span class="pill">⏱ 60 Minutes</span><span class="pill">📝 25 Questions</span><span class="pill">⭐ 25 Marks</span></div>
+  </div>
+
+  <div id="start-screen" class="start-card">
+    <h2>🚀 Ready to begin SET 5?</h2>
+    <p>Read each question carefully. Select one answer and use the question palette to move between questions.</p>
+    <p><strong>CBSE Class 5 Syllabus Focus:</strong> Perimeter & area of squares/rectangles, volume of cubes/cuboids, metric conversions (km, m, cm, kg, g, L, mL), and tally/bar/pie charts (CBSE Chapters: How Many Squares?, Area and its Boundary, Smart Charts, How Big? How Heavy?).</p>
+    <p><strong>Important:</strong> Switching browser tabs during the test will trigger a warning.</p>
+    <input type="text" id="student-name" placeholder="Enter Student Full Name" required>
+    <button class="nav primary" onclick="startExam()">Start Exam →</button>
+  </div>
+
+  <div id="exam-screen" class="hidden">
+    <div class="header">
+      <div><strong>Student:</strong> <span id="display-name"></span> &nbsp;|&nbsp; <strong>Set:</strong> SET 5<br><strong>Tab Warnings:</strong> <span id="warnings" style="color:#be123c;font-weight:800">0</span></div>
+      <div class="timer" id="timer">60:00</div>
+    </div>
+    <div id="progress-wrap"><div id="progress-fill"></div></div>
+    <div class="main">
+      <div class="question-box">
+        <div class="q-card">
+          <span class="q-number" id="q-number">QUESTION 1 OF 25</span>
+          <h3 id="q-title"></h3>
+          <div class="visual-box" id="visual-box"></div>
+          <div id="options-box"></div>
+        </div>
+        <div class="controls">
+          <button class="nav secondary" onclick="prevQ()">← Previous</button>
+          <button class="nav primary" onclick="nextQ()">Save & Next →</button>
+          <button class="nav success" onclick="submitExam()">Submit Exam</button>
+        </div>
+      </div>
+      <aside class="palette">
+        <strong>🧭 Question Palette</strong>
+        <div class="palette-grid" id="palette-grid"></div>
+        <div class="legend"><div><span class="dot" style="background:#16a34a"></span>Answered</div><div><span class="dot" style="background:#fff;border:1px solid #94a3b8"></span>Not answered</div><div><span class="dot" style="background:#6366f1"></span>Current question</div></div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="result-screen" class="hidden">
+    <h2>🎉 SET 5 Completed!</h2>
+    <div id="save-status" class="saving">Saving results to teacher's sheet...</div>
+    <p><strong>Exam Set:</strong> SET 5 — Area, Perimeter, Volume, Measurement & Smart Charts</p>
+    <p><strong>Student Name:</strong> <span id="res-name"></span></p>
+    <p><strong>Score:</strong> <span class="result-score" id="res-score"></span></p>
+    <p><strong>Tab Switches Detected:</strong> <span id="res-warnings"></span></p>
+    <div style="margin:16px 0"><a href="index.html" class="back-btn">← Return to Exam Portal</a></div>
+    <div id="review-box"></div>
+  </div>
+</div>
+
+<script>
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDkbaGgHKmvMrwaE1juPKrWycMQbl5jX7w0TIN3f4zh69kFwOPlpjvA-Abp_o8iBa-/exec";
+  const EXAM_SET_LABEL = "SET 5";
+
+  const questions = [{"q": "1. Find the perimeter of a rectangular park of length 45 m and breadth 28 m.", "options": ["73 m", "146 m", "1,260 m", "136 m"], "answer": 1, "visual": "Perimeter = 2 × (45 m + 28 m)", "hint": "Add length and breadth, then multiply by 2."}, {"q": "2. The perimeter of a square field is 64 m. What is its area?", "options": ["16 sq. m", "128 sq. m", "256 sq. m", "512 sq. m"], "answer": 2, "visual": "Side = 64 ÷ 4  →  Area = Side × Side", "hint": "First divide perimeter by 4 to find one side, then multiply side × side."}, {"q": "3. How many 1-cm cubes can fit inside a box measuring 5 cm × 4 cm × 3 cm?", "options": ["12", "35", "60", "47"], "answer": 2, "visual": "Volume = 5 cm × 4 cm × 3 cm", "hint": "Volume of a cuboid = length × breadth × height."}, {"q": "4. Convert 4 km 65 m into metres.", "options": ["465 m", "4,065 m", "4,650 m", "40,065 m"], "answer": 1, "visual": "(4 × 1,000 m)  +  65 m", "hint": "1 kilometre = 1,000 metres."}, {"q": "5. A rectangle has an area of 96 sq. cm. If its length is 12 cm, find its breadth.", "options": ["6 cm", "8 cm", "10 cm", "84 cm"], "answer": 1, "visual": "Breadth = 96 sq. cm  ÷  12 cm", "hint": "Divide the area by the length."}, {"q": "6. How many millilitres are there in 3.75 litres?", "options": ["375 mL", "3,750 mL", "37,500 mL", "3,075 mL"], "answer": 1, "visual": "3.75 L  ×  1,000", "hint": "1 litre = 1,000 millilitres."}, {"q": "7. A wire of length 36 cm is bent to form an equilateral triangle. What is the length of each side?", "options": ["9 cm", "12 cm", "18 cm", "6 cm"], "answer": 1, "visual": "36 cm  ÷  3 equal sides", "hint": "An equilateral triangle has 3 equal sides."}, {"q": "8. Find the volume of a cube of edge 6 cm.", "options": ["36 cu. cm", "108 cu. cm", "216 cu. cm", "72 cu. cm"], "answer": 2, "visual": "6 cm × 6 cm × 6 cm", "hint": "Volume of a cube = side × side × side."}, {"q": "9. In a tally chart, how many items are represented by four vertical lines crossed by one diagonal line, repeated 3 times plus 2 single lines?", "options": ["14", "15", "17", "18"], "answer": 2, "visual": "(3 × 5)  +  2", "hint": "Each crossed bundle stands for 5."}, {"q": "10. Which unit is best suited to measure the weight of a gold ring?", "options": ["Kilograms", "Grams", "Millilitres", "Metres"], "answer": 1, "visual": "Light objects → Grams (g)", "hint": "Heavy weights use kg; small jewellery items are weighed in grams."}, {"q": "11. A square tile has a side of 20 cm. How many such tiles are needed to cover a floor of area 2 sq. m?", "options": ["25", "50", "100", "200"], "answer": 1, "visual": "Floor = 20,000 sq. cm  ÷  Tile = 400 sq. cm", "hint": "Convert 2 sq. m to sq. cm: 2 × 10,000 = 20,000 sq. cm. Tile area = 20 × 20 = 400 sq. cm."}, {"q": "12. A jug holds 2 L 400 mL of mango juice. If it is poured equally into 8 glasses, how much juice is in each glass?", "options": ["250 mL", "300 mL", "350 mL", "400 mL"], "answer": 1, "visual": "2,400 mL  ÷  8 glasses", "hint": "Convert 2 L 400 mL to 2,400 mL first."}, {"q": "13. If the side of a square is doubled, its area becomes how many times the original area?", "options": ["2 times", "3 times", "4 times", "8 times"], "answer": 2, "visual": "2 × 2 = 4", "hint": "Try an example: side 2 has area 4; side 4 has area 16."}, {"q": "14. A runner runs 4 rounds around a square track of side 75 m. What is the total distance covered?", "options": ["300 m", "600 m", "1,200 m", "1,500 m"], "answer": 2, "visual": "4 rounds × (4 × 75 m)", "hint": "One round = 4 × 75 m = 300 m. Multiply by 4 rounds."}, {"q": "15. Out of 40 students in Class 5, 1/4 like Cricket, 1/2 like Football, and the rest like Badminton. How many students like Badminton?", "options": ["5", "10", "15", "20"], "answer": 1, "visual": "40 − (10 + 20)", "hint": "1/4 of 40 = 10; 1/2 of 40 = 20; remaining = 40 − 30."}, {"q": "16. Convert 6,450 grams into kilograms and grams.", "options": ["64 kg 50 g", "6 kg 450 g", "6 kg 45 g", "60 kg 450 g"], "answer": 1, "visual": "6,450 g  ÷  1,000", "hint": "1,000 g = 1 kg."}, {"q": "17. A rectangular garden is 30 m long and 20 m wide. Find the cost of fencing it at ₹15 per metre.", "options": ["₹750", "₹1,500", "₹9,000", "₹1,200"], "answer": 1, "visual": "Perimeter = 100 m  ×  ₹15/m", "hint": "Fencing goes around the boundary (perimeter = 2 × (30 + 20) = 100 m)."}, {"q": "18. A 10-rupee coin has a weight of 8 g. What is the weight of 250 such coins in kilograms?", "options": ["1 kg", "2 kg", "2.5 kg", "20 kg"], "answer": 1, "visual": "250 × 8 g = 2,000 g", "hint": "250 × 8 g = 2,000 g = 2 kg."}, {"q": "19. What is the area of a right-angled triangle with base 10 cm and height 6 cm?", "options": ["60 sq. cm", "30 sq. cm", "16 sq. cm", "32 sq. cm"], "answer": 1, "visual": "1/2 × Base × Height  =  1/2 × 10 × 6", "hint": "A right triangle is half of a 10 cm × 6 cm rectangle."}, {"q": "20. A train leaves Bengaluru at 8:45 AM and reaches Mysuru at 11:20 AM. How long did the journey take?", "options": ["2 hours 25 minutes", "2 hours 35 minutes", "3 hours 25 minutes", "2 hours 45 minutes"], "answer": 1, "visual": "8:45 AM  →  11:20 AM", "hint": "From 8:45 to 11:00 is 2 hr 15 min, plus 20 min = 2 hr 35 min."}, {"q": "21. In a Chapati (Pie) Chart, if half the circle represents 'Walk to School', what percentage of students walk to school?", "options": ["25%", "50%", "75%", "100%"], "answer": 1, "visual": "1/2 of a circle = 50%", "hint": "Half of 100% is 50%."}, {"q": "22. Two cubes each of side 4 cm are joined end-to-end to form a cuboid. What is the volume of the new cuboid?", "options": ["64 cu. cm", "128 cu. cm", "96 cu. cm", "32 cu. cm"], "answer": 1, "visual": "2 × (4 × 4 × 4)", "hint": "Each cube has volume 64 cu. cm; two cubes together have 64 + 64 = 128 cu. cm."}, {"q": "23. How many metres are there in 3.5 km?", "options": ["350 m", "3,500 m", "35,000 m", "3,050 m"], "answer": 1, "visual": "3.5 × 1,000 m", "hint": "Multiply 3.5 by 1,000."}, {"q": "24. A water tank can hold 500 litres. It is currently 3/5 full. How many more litres are needed to fill it completely?", "options": ["100 litres", "200 litres", "300 litres", "250 litres"], "answer": 1, "visual": "Empty part = 2/5 of 500 L", "hint": "3/5 of 500 is 300 L full, so 500 − 300 = 200 L needed."}, {"q": "25. In a bar graph, 1 unit on the vertical axis represents 15 students. How many students are shown by a bar of height 6 units?", "options": ["60", "75", "90", "105"], "answer": 2, "visual": "6 units × 15 students/unit", "hint": "Multiply 6 by 15."}];
+
+  let current=0,answers=new Array(questions.length).fill(null),timeLeft=3600,timerId,warnings=0,active=false;
+
+  function renderMath(value){
+    let s=String(value);
+    s=s.replace(/(\d+)\s+(\d+)\/(\d+)/g,
+      '<span class="mixed"><span>$1</span><span class="frac"><span class="num">$2</span><span class="den">$3</span></span></span>');
+    s=s.replace(/(\d+)\/(\d+)/g,
+      '<span class="frac"><span class="num">$1</span><span class="den">$2</span></span>');
+    return s;
+  }
+
+  function makeVisualModel(value){
+    const matches=[...String(value).matchAll(/(?<![\d.])(\d+)\/(\d+)(?![\d.])/g)];
+    if(!matches.length)return "";
+    const first=matches[0], numerator=Math.min(Number(first[1]),12), denominator=Math.min(Number(first[2]),12);
+    if(!denominator || denominator<2)return "";
+    const cells=Array.from({length:denominator},(_,i)=>`<span class="${i<numerator?'fill':''}"></span>`).join("");
+    const percent=Math.min(100,numerator/denominator*100);
+    return `<div class="visual-model">
+      <div class="model-card"><div class="model-label">FRACTION BAR</div><div class="bar-model">${cells}</div></div>
+      <div class="model-card"><div class="model-label">PART OF A WHOLE</div><div class="circle-model" style="background:conic-gradient(#a78bfa 0 ${percent}%,#f1f5f9 ${percent}% 100%)"></div></div>
+    </div>`;
+  }
+
+  function startExam(){
+    const name=document.getElementById("student-name").value.trim();
+    if(!name){alert("Please enter your name.");return;}
+    document.getElementById("display-name").innerText=name;
+    document.getElementById("start-screen").classList.add("hidden");
+    document.getElementById("exam-screen").classList.remove("hidden");
+    active=true;renderPalette();loadQuestion(0);
+    timerId=setInterval(()=>{
+      timeLeft--;
+      const m=Math.floor(timeLeft/60),s=timeLeft%60;
+      document.getElementById("timer").innerText=`${m}:${s<10?"0":""}${s}`;
+      if(timeLeft<=0)submitExam();
+    },1000);
+  }
+  function loadQuestion(idx){
+    current=idx;
+    const q=questions[idx];
+    document.getElementById("q-number").innerText=`QUESTION ${idx+1} OF ${questions.length}`;
+    document.getElementById("progress-fill").style.width=`${((idx+1)/questions.length)*100}%`;
+    document.getElementById("q-title").innerHTML=renderMath(q.q);
+    document.getElementById("visual-box").innerHTML=`<div class="big">${renderMath(q.visual)}</div>${makeVisualModel(q.visual)}<div class="small">💡 ${q.hint}</div>`;
+    const box=document.getElementById("options-box");box.innerHTML="";
+    q.options.forEach((opt,i)=>{
+      const label=document.createElement("label");label.className="option";
+      const radio=document.createElement("input");radio.type="radio";radio.name="opt";radio.checked=answers[idx]===i;
+      radio.addEventListener("change",()=>selectOpt(i));
+      const span=document.createElement("span");span.innerHTML=String.fromCharCode(65+i)+". "+renderMath(opt);
+      label.append(radio,span);box.appendChild(label);
+    });
+    renderPalette();
+  }
+  function selectOpt(i){answers[current]=i;renderPalette();}
+  function nextQ(){if(current<questions.length-1)loadQuestion(current+1);}
+  function prevQ(){if(current>0)loadQuestion(current-1);}
+  function renderPalette(){
+    const grid=document.getElementById("palette-grid");grid.innerHTML="";
+    questions.forEach((_,i)=>{
+      const b=document.createElement("button");b.className="p-btn"+(answers[i]!==null?" answered":"")+(i===current?" active":"");
+      b.textContent=i+1;b.type="button";b.addEventListener("click",()=>loadQuestion(i));grid.appendChild(b);
+    });
+  }
+  document.addEventListener("visibilitychange",()=>{
+    if(document.hidden&&active){warnings++;document.getElementById("warnings").innerText=warnings;alert("Warning: Switching tabs is not allowed during the exam!");}
+  });
+  function submitExam(){
+    if(!active)return;
+    const unanswered=answers.filter(a=>a===null).length;
+    if(unanswered>0&&timeLeft>0&&!confirm(`You have ${unanswered} unanswered question(s). Do you still want to submit?`))return;
+    active=false;clearInterval(timerId);
+    const studentName=document.getElementById("student-name").value.trim();
+    let score=0,selectedList=[],reviewHTML="<h3>📋 Answer Review</h3>";
+    questions.forEach((q,i)=>{
+      const correct=answers[i]===q.answer;if(correct)score++;
+      const chosenText=answers[i]!==null?q.options[answers[i]]:"Unanswered";
+      selectedList.push(`Q${i+1}: ${chosenText}`);
+      reviewHTML+=`<div class="review-item"><strong>${renderMath(q.q)}</strong><br>Your Answer: <span style="color:${correct?"#16a34a":"#dc2626"};font-weight:700">${renderMath(chosenText)}</span> &nbsp;|&nbsp; Correct Answer: <strong>${renderMath(q.options[q.answer])}</strong></div>`;
+    });
+    document.getElementById("exam-screen").classList.add("hidden");
+    document.getElementById("result-screen").classList.remove("hidden");
+    document.getElementById("res-name").innerText=studentName;
+    document.getElementById("res-score").innerText=`${score} / ${questions.length}`;
+    document.getElementById("res-warnings").innerText=warnings;
+    document.getElementById("review-box").innerHTML=reviewHTML;
+
+    // Post results to Google Sheets with exact same structure + Set prefix in studentName so teacher knows which set was taken
+    fetch(GOOGLE_SCRIPT_URL,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        studentName:`[${EXAM_SET_LABEL}] ${studentName}`,
+        score:score,
+        totalQuestions:questions.length,
+        warnings:warnings,
+        answers:selectedList.join(" | ")
+      })
+    }).then(()=>{
+      const statusBox=document.getElementById("save-status");
+      statusBox.className="saved";
+      statusBox.innerText="Results saved successfully to teacher's sheet!";
+    }).catch(()=>{
+      document.getElementById("save-status").innerText="Saved locally. Please take a screenshot of your score.";
+    });
+  }
+</script>
+</body>
+</html>

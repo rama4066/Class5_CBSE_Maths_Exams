@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 5 Mathematics Challenge — Set 2 | Class 5 CBSE Maths</title>
+<style>
+:root{--ink:#172554;--muted:#64748b;--blue:#4f46e5;--purple:#9333ea;--green:#16a34a;--pink:#ec4899;--line:#e2e8f0}
+*{box-sizing:border-box}
+body{margin:0;padding:22px;font-family:"Segoe UI",Tahoma,sans-serif;color:var(--ink);background:linear-gradient(135deg,#e0f2fe 0%,#f5f3ff 48%,#fce7f3 100%);min-height:100vh}
+.container{max-width:1050px;margin:auto;background:#fff;border-radius:22px;padding:28px;box-shadow:0 18px 55px #312e811c}
+.top-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#4f46e5;font-weight:700;font-size:14px;background:#eef2ff;padding:8px 14px;border-radius:10px;border:1px solid #c7d2fe;transition:.15s}
+.back-btn:hover{background:#e0e7ff;transform:translateY(-1px)}
+.hero{padding:24px;border-radius:18px;color:#fff;background:linear-gradient(115deg,#4338ca,#7c3aed 58%,#db2777);margin-bottom:22px}
+.hero h1{margin:0 0 8px;font-size:clamp(23px,4vw,32px)}
+.hero p{margin:5px 0;color:#f5f3ff}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.pill{background:#ffffff24;border:1px solid #ffffff55;padding:7px 12px;border-radius:30px;font-size:13px;font-weight:700}
+.hidden{display:none!important}
+.start-card{background:linear-gradient(135deg,#f8fafc,#eef2ff);border:1px solid #dbeafe;border-radius:16px;padding:22px}
+input[type=text]{width:min(100%,360px);padding:13px 14px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px;margin:8px 8px 8px 0}
+button{font:inherit}
+.nav{border:0;border-radius:10px;padding:11px 17px;font-weight:700;cursor:pointer;transition:.18s}
+.nav:hover,.p-btn:hover{transform:translateY(-1px);filter:brightness(.97)}
+.primary{background:linear-gradient(110deg,#4f46e5,#7c3aed);color:white}
+.secondary{background:#e2e8f0;color:#334155}
+.success{background:linear-gradient(110deg,#059669,#22c55e);color:white}
+.header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:13px 16px;background:#f8fafc;border:1px solid var(--line);border-radius:13px;margin-bottom:20px}
+.timer{font-size:21px;font-weight:800;color:#be123c;background:#fff1f2;border:1px solid #fecdd3;padding:8px 15px;border-radius:10px;font-variant-numeric:tabular-nums}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:22px}
+.question-box{min-width:0}
+.q-card{padding:20px;border:1px solid #e0e7ff;border-radius:17px;background:linear-gradient(145deg,#fff,#f8faff);min-height:330px}
+.q-number{display:inline-block;background:#ede9fe;color:#6d28d9;border-radius:30px;padding:6px 12px;font-size:13px;font-weight:800;margin-bottom:10px}
+#q-title{font-size:19px;line-height:1.9;margin:2px 0 15px;color:#1e293b}
+.visual-box{padding:14px;margin:12px 0 17px;border-radius:13px;background:linear-gradient(120deg,#eff6ff,#fdf2f8);border:1px dashed #c4b5fd;text-align:center;color:#4338ca;font-weight:700;min-height:95px}
+.visual-box .big{font-size:clamp(19px,3vw,26px);letter-spacing:0}
+.visual-box .small{font-size:13px;color:#64748b;font-weight:600;margin-top:5px}
+.option{display:flex;align-items:flex-start;gap:11px;margin:10px 0;padding:13px 14px;border:1px solid #dbe3f0;border-radius:11px;cursor:pointer;background:#fff;transition:.15s;line-height:1.4}
+.option:hover{border-color:#818cf8;background:#f5f3ff}
+.option:has(input:checked){border:2px solid #6366f1;background:#eef2ff;padding:12px 13px}
+.option input{margin-top:3px;accent-color:#4f46e5;transform:scale(1.15)}
+.controls{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:18px}
+.palette{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fbfdff;align-self:start}
+.palette-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:13px}
+.p-btn{padding:10px 4px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;cursor:pointer;font-weight:800;color:#475569}
+.p-btn.answered{background:#16a34a;color:white;border-color:#16a34a}
+.p-btn.active{outline:3px solid #c7d2fe;border-color:#4f46e5}
+.legend{font-size:12px;color:#64748b;line-height:1.8;margin-top:14px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+#save-status{padding:13px;border-radius:10px;margin:15px 0;font-weight:700}
+.saving{background:#fef3c7;color:#92400e}.saved{background:#dcfce7;color:#166534}
+.review-item{padding:13px 4px;border-bottom:1px solid #e5e7eb;line-height:1.5}
+.result-score{font-size:25px;font-weight:900;color:#4f46e5}
+#progress-wrap{height:8px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin:-7px 0 18px}
+#progress-fill{height:100%;width:4%;background:linear-gradient(90deg,#4f46e5,#ec4899);transition:width .25s}
+.frac{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;text-align:center;line-height:1.05;margin:0 2px;min-width:1.05em;font-size:.92em}
+.frac .num{padding:0 3px 3px;border-bottom:2px solid currentColor}
+.frac .den{padding:3px 3px 0}
+.mixed{display:inline-flex;align-items:center;gap:2px;white-space:nowrap}
+.visual-model{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:12px auto 3px}
+.model-card{background:#ffffffc9;border:1px solid #dbeafe;border-radius:12px;padding:9px 12px;min-width:110px}
+.model-label{font-size:11px;color:#64748b;font-weight:700;margin-bottom:7px}
+.bar-model{display:flex;gap:2px;height:18px;margin:0 auto;width:120px}
+.bar-model span{flex:1;border:1px solid #a5b4fc;border-radius:3px;background:#eef2ff}
+.bar-model span.fill{background:linear-gradient(135deg,#818cf8,#c084fc);border-color:#818cf8}
+.circle-model{width:54px;height:54px;border-radius:50%;border:3px solid #818cf8;background:conic-gradient(#a78bfa 0 40%,#f1f5f9 40% 100%);margin:auto}
+.option .frac,.review-item .frac{font-size:1em}
+@media(max-width:520px){.visual-model{gap:8px}.model-card{min-width:95px;padding:8px}}
+@media(max-width:760px){body{padding:10px}.container{padding:15px;border-radius:16px}.main{grid-template-columns:1fr}.palette{order:2}.palette-grid{grid-template-columns:repeat(5,1fr)}.q-card{padding:15px}.controls .nav{flex:1}.header{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top-nav">
+    <a href="index.html" class="back-btn">← Back to All Exam Sets</a>
+    <span style="font-size:13px;font-weight:700;color:#64748b">SET 2</span>
+  </div>
+  <div class="hero">
+    <h1>🌈 Class 5 Mathematics Challenge — Set 2</h1>
+    <p>Large Numbers & Four Operations (Indian & International Systems)</p>
+    <div class="pills"><span class="pill">⏱ 60 Minutes</span><span class="pill">📝 25 Questions</span><span class="pill">⭐ 25 Marks</span></div>
+  </div>
+
+  <div id="start-screen" class="start-card">
+    <h2>🚀 Ready to begin SET 2?</h2>
+    <p>Read each question carefully. Select one answer and use the question palette to move between questions.</p>
+    <p><strong>CBSE Class 5 Syllabus Focus:</strong> Place value up to Crores, expanded form, rounding off, multi-digit multiplication & division, and word problems (CBSE Chapters: The Fish Tale, Ways to Multiply and Divide).</p>
+    <p><strong>Important:</strong> Switching browser tabs during the test will trigger a warning.</p>
+    <input type="text" id="student-name" placeholder="Enter Student Full Name" required>
+    <button class="nav primary" onclick="startExam()">Start Exam →</button>
+  </div>
+
+  <div id="exam-screen" class="hidden">
+    <div class="header">
+      <div><strong>Student:</strong> <span id="display-name"></span> &nbsp;|&nbsp; <strong>Set:</strong> SET 2<br><strong>Tab Warnings:</strong> <span id="warnings" style="color:#be123c;font-weight:800">0</span></div>
+      <div class="timer" id="timer">60:00</div>
+    </div>
+    <div id="progress-wrap"><div id="progress-fill"></div></div>
+    <div class="main">
+      <div class="question-box">
+        <div class="q-card">
+          <span class="q-number" id="q-number">QUESTION 1 OF 25</span>
+          <h3 id="q-title"></h3>
+          <div class="visual-box" id="visual-box"></div>
+          <div id="options-box"></div>
+        </div>
+        <div class="controls">
+          <button class="nav secondary" onclick="prevQ()">← Previous</button>
+          <button class="nav primary" onclick="nextQ()">Save & Next →</button>
+          <button class="nav success" onclick="submitExam()">Submit Exam</button>
+        </div>
+      </div>
+      <aside class="palette">
+        <strong>🧭 Question Palette</strong>
+        <div class="palette-grid" id="palette-grid"></div>
+        <div class="legend"><div><span class="dot" style="background:#16a34a"></span>Answered</div><div><span class="dot" style="background:#fff;border:1px solid #94a3b8"></span>Not answered</div><div><span class="dot" style="background:#6366f1"></span>Current question</div></div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="result-screen" class="hidden">
+    <h2>🎉 SET 2 Completed!</h2>
+    <div id="save-status" class="saving">Saving results to teacher's sheet...</div>
+    <p><strong>Exam Set:</strong> SET 2 — Large Numbers & Four Operations (Indian & International Systems)</p>
+    <p><strong>Student Name:</strong> <span id="res-name"></span></p>
+    <p><strong>Score:</strong> <span class="result-score" id="res-score"></span></p>
+    <p><strong>Tab Switches Detected:</strong> <span id="res-warnings"></span></p>
+    <div style="margin:16px 0"><a href="index.html" class="back-btn">← Return to Exam Portal</a></div>
+    <div id="review-box"></div>
+  </div>
+</div>
+
+<script>
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDkbaGgHKmvMrwaE1juPKrWycMQbl5jX7w0TIN3f4zh69kFwOPlpjvA-Abp_o8iBa-/exec";
+  const EXAM_SET_LABEL = "SET 2";
+
+  const questions = [{"q": "1. How many thousands make 1 lakh?", "options": ["10", "100", "1,000", "10,000"], "answer": 1, "visual": "1,00,000  ÷  1,000  =  ?", "hint": "Write 1 lakh in digits (1,00,000) and count how many 1,000s fit into it."}, {"q": "2. What is the difference between the place value and face value of 7 in 4,72,819?", "options": ["69,993", "70,000", "6,993", "69,930"], "answer": 0, "visual": "70,000  −  7", "hint": "Place value of 7 is 70,000 and its face value is 7."}, {"q": "3. Write the number name in the International system for 6,408,215.", "options": ["Sixty-four lakh eight thousand two hundred fifteen", "Six million four hundred eight thousand two hundred fifteen", "Six million forty-eight thousand two hundred fifteen", "Sixty million four hundred eight thousand fifteen"], "answer": 1, "visual": "6 , 408 , 215", "hint": "Group digits in threes from the right: Millions, Thousands, Ones."}, {"q": "4. Find the sum of the greatest 6-digit number and the smallest 5-digit number.", "options": ["10,09,999", "1,09,999", "10,99,999", "10,00,999"], "answer": 0, "visual": "9,99,999  +  10,000", "hint": "Greatest 6-digit number is 9,99,999; smallest 5-digit number is 10,000."}, {"q": "5. A boat brings 245 kg of fish in one trip. How much fish will it bring in 38 trips?", "options": ["9,210 kg", "9,310 kg", "9,410 kg", "8,310 kg"], "answer": 1, "visual": "245 kg  ×  38 trips", "hint": "Multiply 245 by 30 and by 8, then add the two products."}, {"q": "6. Divide 48,672 by 24.", "options": ["2,028", "228", "2,208", "2,018"], "answer": 0, "visual": "48,672  ÷  24", "hint": "Remember to place a 0 in the quotient when a digit is smaller than 24."}, {"q": "7. What must be subtracted from 8,00,000 to get 4,56,789?", "options": ["3,43,211", "3,43,221", "3,53,211", "4,43,211"], "answer": 0, "visual": "8,00,000  −  4,56,789", "hint": "Subtract each digit carefully using borrowing across zeros."}, {"q": "8. Round off 3,84,650 to the nearest ten thousand.", "options": ["3,80,000", "3,90,000", "4,00,000", "3,85,000"], "answer": 0, "visual": "3, 8 [4] ,650  →  Nearest 10,000", "hint": "Look at the thousands digit (4). Since 4 < 5, round down."}, {"q": "9. A factory produces 1,425 toys every day. How many toys does it produce in the month of January?", "options": ["42,750", "44,175", "45,600", "43,175"], "answer": 1, "visual": "1,425 toys/day  ×  31 days", "hint": "January has 31 days."}, {"q": "10. Find the missing number: 540 × ? = 5,40,000.", "options": ["10", "100", "1,000", "10,000"], "answer": 2, "visual": "540  ×  ?  =  5,40,000", "hint": "Count the extra zeros added to 540."}, {"q": "11. In a division sum, the divisor is 35, the quotient is 124, and the remainder is 18. Find the dividend.", "options": ["4,340", "4,358", "4,322", "4,458"], "answer": 1, "visual": "Dividend = (35 × 124) + 18", "hint": "Dividend = Divisor × Quotient + Remainder."}, {"q": "12. Express 7,00,000 + 40,000 + 900 + 60 + 5 in standard form.", "options": ["7,49,065", "7,40,965", "7,04,965", "7,40,956"], "answer": 1, "visual": "7,00,000 + 40,000 + 0 + 900 + 60 + 5", "hint": "Notice there is no thousands term, so put 0 in the thousands place."}, {"q": "13. A library has 18,450 books arranged equally in 45 shelves. How many books are on each shelf?", "options": ["401", "410", "420", "390"], "answer": 1, "visual": "18,450 books  ÷  45 shelves", "hint": "45 × 4 = 180; carry the remainder 4 down with 5."}, {"q": "14. Which Roman numeral represents 490?", "options": ["XD", "CDXC", "CCCCXC", "LD"], "answer": 1, "visual": "400 (CD)  +  90 (XC)", "hint": "400 is CD (500 − 100) and 90 is XC (100 − 10)."}, {"q": "15. Estimate the product of 489 × 312 by rounding each number to the nearest hundred.", "options": ["1,20,000", "1,50,000", "1,60,000", "1,40,000"], "answer": 1, "visual": "489 → 500   ×   312 → 300", "hint": "489 rounds to 500 and 312 rounds to 300."}, {"q": "16. A fisherwomen's bank saves ₹4,750 every month. How much money will they save in 2 years?", "options": ["₹95,000", "₹1,14,000", "₹1,04,000", "₹1,24,000"], "answer": 1, "visual": "₹4,750  ×  24 months", "hint": "2 years = 24 months."}, {"q": "17. Simplify: 1,250 + 750 × 4 − 1,000.", "options": ["7,000", "3,250", "4,250", "2,250"], "answer": 1, "visual": "1,250  +  (750 × 4)  −  1,000", "hint": "Always multiply before adding or subtracting (DMAS rule)."}, {"q": "18. How many 250-rupee notes make ₹1,00,000?", "options": ["40", "400", "4,000", "250"], "answer": 1, "visual": "₹1,00,000  ÷  ₹250", "hint": "Four ₹250 notes make ₹1,000."}, {"q": "19. Form the smallest 6-digit number using the digits 5, 0, 8, 2, 9, 1 without repeating any digit.", "options": ["1,02,589", "0,12,589", "1,20,589", "1,02,598"], "answer": 0, "visual": "Digits: 5, 0, 8, 2, 9, 1", "hint": "A 6-digit number cannot start with 0; put 1 first, then 0."}, {"q": "20. 1 crore is equal to how many millions?", "options": ["1 million", "10 millions", "100 millions", "1,000 millions"], "answer": 1, "visual": "1,00,00,000  =  10,000,000", "hint": "Count the zeros: 1 crore has 7 zeros, 1 million has 6 zeros."}, {"q": "21. A truck can carry 6,500 kg of cement. How many bags of 50 kg each can it load?", "options": ["120", "130", "140", "150"], "answer": 1, "visual": "6,500 kg  ÷  50 kg/bag", "hint": "Divide 650 by 5."}, {"q": "22. Find the product of 1,208 × 105.", "options": ["1,26,840", "1,26,040", "1,25,840", "1,27,840"], "answer": 0, "visual": "1,208  ×  (100 + 5)", "hint": "Multiply 1,208 by 100 and add 1,208 × 5."}, {"q": "23. What is 10,000 less than 5,04,320?", "options": ["4,04,320", "4,94,320", "5,03,320", "4,99,320"], "answer": 1, "visual": "5,04,320  −  10,000", "hint": "Subtract 1 from the ten-thousands place."}, {"q": "24. A school collected ₹2,45,600 for charity. If 800 students contributed equally, how much did each student give?", "options": ["₹307", "₹370", "₹317", "₹302"], "answer": 0, "visual": "₹2,45,600  ÷  800", "hint": "Cancel two zeros from both numbers: 2,456 ÷ 8."}, {"q": "25. Compare using >, < or = : 8,90,909 ___ 8,99,009.", "options": [">", "<", "=", "Cannot be compared"], "answer": 1, "visual": "8,90,909   [ ? ]   8,99,009", "hint": "Compare the digits in the thousands place: 0 vs 9."}];
+
+  let current=0,answers=new Array(questions.length).fill(null),timeLeft=3600,timerId,warnings=0,active=false;
+
+  function renderMath(value){
+    let s=String(value);
+    s=s.replace(/(\d+)\s+(\d+)\/(\d+)/g,
+      '<span class="mixed"><span>$1</span><span class="frac"><span class="num">$2</span><span class="den">$3</span></span></span>');
+    s=s.replace(/(\d+)\/(\d+)/g,
+      '<span class="frac"><span class="num">$1</span><span class="den">$2</span></span>');
+    return s;
+  }
+
+  function makeVisualModel(value){
+    const matches=[...String(value).matchAll(/(?<![\d.])(\d+)\/(\d+)(?![\d.])/g)];
+    if(!matches.length)return "";
+    const first=matches[0], numerator=Math.min(Number(first[1]),12), denominator=Math.min(Number(first[2]),12);
+    if(!denominator || denominator<2)return "";
+    const cells=Array.from({length:denominator},(_,i)=>`<span class="${i<numerator?'fill':''}"></span>`).join("");
+    const percent=Math.min(100,numerator/denominator*100);
+    return `<div class="visual-model">
+      <div class="model-card"><div class="model-label">FRACTION BAR</div><div class="bar-model">${cells}</div></div>
+      <div class="model-card"><div class="model-label">PART OF A WHOLE</div><div class="circle-model" style="background:conic-gradient(#a78bfa 0 ${percent}%,#f1f5f9 ${percent}% 100%)"></div></div>
+    </div>`;
+  }
+
+  function startExam(){
+    const name=document.getElementById("student-name").value.trim();
+    if(!name){alert("Please enter your name.");return;}
+    document.getElementById("display-name").innerText=name;
+    document.getElementById("start-screen").classList.add("hidden");
+    document.getElementById("exam-screen").classList.remove("hidden");
+    active=true;renderPalette();loadQuestion(0);
+    timerId=setInterval(()=>{
+      timeLeft--;
+      const m=Math.floor(timeLeft/60),s=timeLeft%60;
+      document.getElementById("timer").innerText=`${m}:${s<10?"0":""}${s}`;
+      if(timeLeft<=0)submitExam();
+    },1000);
+  }
+  function loadQuestion(idx){
+    current=idx;
+    const q=questions[idx];
+    document.getElementById("q-number").innerText=`QUESTION ${idx+1} OF ${questions.length}`;
+    document.getElementById("progress-fill").style.width=`${((idx+1)/questions.length)*100}%`;
+    document.getElementById("q-title").innerHTML=renderMath(q.q);
+    document.getElementById("visual-box").innerHTML=`<div class="big">${renderMath(q.visual)}</div>${makeVisualModel(q.visual)}<div class="small">💡 ${q.hint}</div>`;
+    const box=document.getElementById("options-box");box.innerHTML="";
+    q.options.forEach((opt,i)=>{
+      const label=document.createElement("label");label.className="option";
+      const radio=document.createElement("input");radio.type="radio";radio.name="opt";radio.checked=answers[idx]===i;
+      radio.addEventListener("change",()=>selectOpt(i));
+      const span=document.createElement("span");span.innerHTML=String.fromCharCode(65+i)+". "+renderMath(opt);
+      label.append(radio,span);box.appendChild(label);
+    });
+    renderPalette();
+  }
+  function selectOpt(i){answers[current]=i;renderPalette();}
+  function nextQ(){if(current<questions.length-1)loadQuestion(current+1);}
+  function prevQ(){if(current>0)loadQuestion(current-1);}
+  function renderPalette(){
+    const grid=document.getElementById("palette-grid");grid.innerHTML="";
+    questions.forEach((_,i)=>{
+      const b=document.createElement("button");b.className="p-btn"+(answers[i]!==null?" answered":"")+(i===current?" active":"");
+      b.textContent=i+1;b.type="button";b.addEventListener("click",()=>loadQuestion(i));grid.appendChild(b);
+    });
+  }
+  document.addEventListener("visibilitychange",()=>{
+    if(document.hidden&&active){warnings++;document.getElementById("warnings").innerText=warnings;alert("Warning: Switching tabs is not allowed during the exam!");}
+  });
+  function submitExam(){
+    if(!active)return;
+    const unanswered=answers.filter(a=>a===null).length;
+    if(unanswered>0&&timeLeft>0&&!confirm(`You have ${unanswered} unanswered question(s). Do you still want to submit?`))return;
+    active=false;clearInterval(timerId);
+    const studentName=document.getElementById("student-name").value.trim();
+    let score=0,selectedList=[],reviewHTML="<h3>📋 Answer Review</h3>";
+    questions.forEach((q,i)=>{
+      const correct=answers[i]===q.answer;if(correct)score++;
+      const chosenText=answers[i]!==null?q.options[answers[i]]:"Unanswered";
+      selectedList.push(`Q${i+1}: ${chosenText}`);
+      reviewHTML+=`<div class="review-item"><strong>${renderMath(q.q)}</strong><br>Your Answer: <span style="color:${correct?"#16a34a":"#dc2626"};font-weight:700">${renderMath(chosenText)}</span> &nbsp;|&nbsp; Correct Answer: <strong>${renderMath(q.options[q.answer])}</strong></div>`;
+    });
+    document.getElementById("exam-screen").classList.add("hidden");
+    document.getElementById("result-screen").classList.remove("hidden");
+    document.getElementById("res-name").innerText=studentName;
+    document.getElementById("res-score").innerText=`${score} / ${questions.length}`;
+    document.getElementById("res-warnings").innerText=warnings;
+    document.getElementById("review-box").innerHTML=reviewHTML;
+
+    // Post results to Google Sheets with exact same structure + Set prefix in studentName so teacher knows which set was taken
+    fetch(GOOGLE_SCRIPT_URL,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        studentName:`[${EXAM_SET_LABEL}] ${studentName}`,
+        score:score,
+        totalQuestions:questions.length,
+        warnings:warnings,
+        answers:selectedList.join(" | ")
+      })
+    }).then(()=>{
+      const statusBox=document.getElementById("save-status");
+      statusBox.className="saved";
+      statusBox.innerText="Results saved successfully to teacher's sheet!";
+    }).catch(()=>{
+      document.getElementById("save-status").innerText="Saved locally. Please take a screenshot of your score.";
+    });
+  }
+</script>
+</body>
+</html>
